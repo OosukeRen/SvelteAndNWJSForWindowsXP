@@ -29,9 +29,12 @@ run BuildApp.js but first configure it.
 
 You'll find your app in MainFolder/BuiltApp/${YourProjectName}/${YourProjectName}.exe
 
+If you want to be able to run more than 1 instance of your project, include "multipleInstances.js" in the index.html (as early as possible would be the best.)
+// Reasoning - when NW.exe starts, it checks if an instance with this package.json name exists, so this script changes the name of the project with a UUID on every run
 
-
-
+!!! "--user-data-dir=./NWProfile" this Chromium parameter:
+If you're using the multiple instances script, you'll notice a parasite effect where %LOCALAPPDATA% gets filled with folders with ${yourAppNAME}-${RANDOM NUMBER}
+When NW.exe gets started, it tries to create a folder with a user profile because of the embedded Chromium. This variable anchors all folders to one so that your drive doesn't fill up like this or if so, at least not that fast.
 
 -------------
 
