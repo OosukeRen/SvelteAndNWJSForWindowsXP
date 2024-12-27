@@ -3,6 +3,24 @@
 	const nw = window.nw;
 	
 	const { require } = window.nw;
+
+	onMount(() => {
+	// 
+    window.menu = (menuProps) => {
+      let modalContainer =
+        jQuery("body")[0]
+
+
+      const modal = new Menu({
+        target: modalContainer,
+        props: spreader(menuProps, {
+          hide: () => {
+            modal.$destroy();
+          },
+        }) 
+      });
+    };
+  });
 </script>
 
 <main>

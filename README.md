@@ -51,3 +51,9 @@ copy /b NAMEOFYOURPROJECT.exe+package.nw NAMEYOUWANT.exe
 then voila, you can now delete your package.nw and your source code is hidden inside of the executable.
 
 !!! Keep in mind that every time you're starting the application NW will be unzipping the project so it'll definitely slow down the starting duration based on the size and count of the files.
+
+
+### Custom built helping functions/modules
+
+- element.js (ElementUtils) - A global module made for HTML element calculations and so on.
+- multipleInstances.js - Basically what it says - if you include it, you can launch multipleinstances of your application
