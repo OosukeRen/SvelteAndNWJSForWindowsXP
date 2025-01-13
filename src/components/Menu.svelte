@@ -1,4 +1,5 @@
 <script>
+    /** Menu.svelte*/
     import { onMount } from "svelte";
   
       export let zIndex;

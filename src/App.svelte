@@ -1,11 +1,13 @@
 <script>
+	/** App.svelte*/
 	export let name;
 	const nw = window.nw;
 	
 	const { require } = window.nw;
 
 	onMount(() => {
-	// 
+	// usage:
+	
     window.menu = (menuProps) => {
       let modalContainer =
         jQuery("body")[0]

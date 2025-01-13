@@ -1,4 +1,5 @@
 <script>
+    /** WrappedMenu.svelte*/
     import { onMount } from "svelte";
     import Menu from "./Menu.svelte";
   

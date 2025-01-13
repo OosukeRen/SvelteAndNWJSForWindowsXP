@@ -3,7 +3,7 @@ const SDK = false;
 // TO OPTIMIZE DOWNLOAD URLS 
 // #NWBUILD_DOWNLOAD_OPTIMIZE
 const projectName = 'XPCode';
-const versionNumber = '0.15.4';
+const versionNumber = '0.12.3'; // 0.13+ has an issue where if you don't have an internet on the machine, NWjs would insta crash. Also, the startup of 0.13 is around 5 times faster.
 const platform = 'win'
 const fs = require('fs');
 const path = require('path');
@@ -11,6 +11,20 @@ const child_process = require('child_process');
 const decompress = require('decompress');
 
 const NWVersions = {
+    '0.12.3': {
+        sdk: {
+            win: {
+                url: 'https://dl.nwjs.io/v0.12.3/nwjs-v0.12.3-win-ia32.zip',
+                name: 'nwjs-v0.12.3-win-ia32'
+            }
+        },
+        normal: {
+            win: {
+                url: 'https://dl.nwjs.io/v0.12.3/nwjs-v0.12.3-win-ia32.zip',
+                name: 'nwjs-v0.12.3-win-ia32'
+            }
+        }
+    },
     '0.15.4': {
         sdk: {
             win: {
