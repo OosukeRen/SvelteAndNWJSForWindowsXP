@@ -8,13 +8,18 @@ import { terser } from 'rollup-plugin-terser';
 import path from 'path';
 import fs from 'fs';
 
-fs.exists( 'appname.txt', (appNameExists) => {
-	if(!appNameExists) {
-		fs.writeFile('appname.txt', process.env.APPLICATION_NAME);
+fs.exists('appname.txt', (appNameExists) => {
+		if(!appNameExists) {
+			fs.writeFile('appname.txt', process.env.APPLICATION_NAME, {encoding: 'utf-8'}, (err, res) => {
+				if(err) {
+					console.log("Error trying to write appname.txt");
+				}
+			});
+		}
 	}
-});
+);
 
-const production = !process. env.ROLLUP_WATCH;
+const production = !false;
 const bundleJSPath = path.resolve('./public/build/bundle.js');
 
 const bundleCSSPath = path.resolve('./public/build/bundle.css')
@@ -68,7 +73,9 @@ export default {
 		commonjs(),
 
 		// If the version is less than 15, use babel
-		versionToNumber < 15 && getBabelOutputPlugin({
+		// versionToNumber < 15 &&
+		
+		getBabelOutputPlugin({
 			presets: [["@babel/preset-env", { targets: { chrome: "41" }, loose: true }]],
 			plugins: ["@babel/plugin-transform-arrow-functions"],
 			allowAllFormats: true
