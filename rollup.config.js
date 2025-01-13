@@ -75,7 +75,7 @@ export default {
 		// If the version is less than 15, use babel
 		// versionToNumber < 15 &&
 		
-		getBabelOutputPlugin({
+		versionToNumber < 15 && getBabelOutputPlugin({
 			presets: [["@babel/preset-env", { targets: { chrome: "41" }, loose: true }]],
 			plugins: ["@babel/plugin-transform-arrow-functions"],
 			allowAllFormats: true
