@@ -10,7 +10,12 @@
     "watch_js_modules": "nodemon --watch ./src/scripts --exec node CompileBabel.js"
   },
   "devDependencies": {
+    "@babel/cli": "^7.25.9",
+    "@babel/core": "^7.26.0",
+    "@babel/plugin-transform-arrow-functions": "^7.25.9",
+    "@babel/preset-env": "^7.26.0",
     "@rollup/plugin-commonjs": "^12.0.0",
+    "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-node-resolve": "^8.0.0",
     "dotenv": "^16.4.7",
     "rollup": "^2.3.4",
