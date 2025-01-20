@@ -16,7 +16,8 @@
     "rollup": "^2.3.4",
     "rollup-plugin-svelte": "^5.0.3",
     "rollup-plugin-terser": "^5.1.2",
-    "svelte": "^3.29.4"
+    "svelte": "^3.29.4",
+    "nodemon": "^3.1.9"
   },
   "dependencies": {
     "decompress": "^4.2.1",

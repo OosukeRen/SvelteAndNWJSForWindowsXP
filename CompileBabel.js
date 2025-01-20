@@ -1,3 +1,4 @@
+require("dotenv").config();
 let nwJSVersion = '' || process.env.NWJS_VERSION;
 
 // For easy calculation of the current version being used
@@ -29,7 +30,7 @@ function transpileFile(inputFilePath, outputFilePath) {
         code = babel.transformSync(code, {
             presets: [["@babel/preset-env", { targets: { chrome: "41" }, loose: true }]],
             plugins: ["@babel/plugin-transform-arrow-functions"]
-        });
+        }).code;
     };
 
     fs.writeFileSync(outputFilePath, code);
