@@ -1,5 +1,6 @@
 <script>
 	/** App.svelte*/
+	import { onMount } from "svelte";
 	export let name;
 	const nw = window.nw;
 	
