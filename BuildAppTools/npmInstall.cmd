@@ -1,14 +1,12 @@
 @echo off
 setlocal enabledelayedexpansion
 
-:: Read APPLICATION_NAME from a text file (located in the parent directory)
-cd ..
-for /f "delims=" %%a in (appname.txt) do set APPLICATION_NAME=%%a
-cd /d "%~dp0"
+:: Read APPLICATION_NAME from appname.txt (must be in SourceCode)
+for /f "delims=" %%a in (%~dp0\..\appname.txt) do set APPLICATION_NAME=%%a
 
-:: Navigate to the package directory
-cd ../BuiltApp/%APPLICATION_NAME%/package.nw
-echo %cd%
+:: Navigate to correct package.nw folder
+cd /d "%~dp0\..\..\BuiltApp\%APPLICATION_NAME%\package.nw"
+echo Installing into: %cd%
 
 :: Install dependencies
 call npm install
